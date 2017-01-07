@@ -26,4 +26,8 @@ uses Spring Integration to fetch data, process it, and write it to a file
 #### 3.2 Building a RESTful Web Service with Spring Boot Actuator
 监控应用 如 curl localhost:9001/health
 #### 3.3 Messaging with JMS
-
+Java Message Service, 处理Email
+#### 3.4 Creating a Batch Service
+使用spring-batch-core依赖,顺序执行操作,从csv文档读取数据,转化处理,存储
+#### 3.5 Securing a Web Application
+实现用户登录推出
