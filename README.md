@@ -20,6 +20,8 @@
 #### 1.8 Validating Form Input
 #### 2.1 Uploading Files
 #### 2.2 Authenticating a User with LDAP
-#### 2.3 Integrating Data
+#### 2.3 Integrating Data  
+uses Spring Integration to fetch data, process it, and write it to a file
+#### 3.1 Messaging with Redis
 
 
