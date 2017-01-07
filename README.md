@@ -25,4 +25,5 @@ uses Spring Integration to fetch data, process it, and write it to a file
 #### 3.1 Messaging with Redis
 #### 3.2 Building a RESTful Web Service with Spring Boot Actuator
 监控应用 如 curl localhost:9001/health
+#### 3.3 Messaging with JMS
 
