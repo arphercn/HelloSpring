@@ -29,31 +29,3 @@ uses Spring Integration to fetch data, process it, and write it to a file
 Java Message Service, 处理Email
 #### 3.4 Creating a Batch Service
 使用spring-batch-core依赖,顺序执行操作,从csv文档读取数据,转化处理,存储
-#### 3.5 Securing a Web Application
-实现用户登录推出
-#### 3.6 Building a Hypermedia-Driven RESTful Web Service
-返回的资源包含可以变化参数的链接url,用来指向本条目,(格式可以是json,xml等格式)
-#### 3.7 Accessing Data with GemFire
-增强版的Redis
-#### 3.8 Accessing Data with JPA
-JPA全称为Java Persistence API,Java持久化接口
-[JPA入门例子](http://blog.csdn.net/hmk2011/article/details/6289151)  
-使用JPA持久化对象，并不是依赖于某一个ORM框架  
-本例使用javax.persistence.Entity注释customer模型
-#### 3.9 Converting a Spring Boot JAR Application to a WAR
-使用jar时,`mvn clean package && java -jar target/gs-accessing-data-jpa-0.1.0.jar`
-使用war包,在pom.xml添加`<packaging>war</packaging>`,
- 在内嵌容器依赖spring-boot-starter-tomcat下添加`<scope>provided</scope>`(本例无)
- 然后执行`mvn clean package && java -jar target/gs-accessing-data-jpa-0.1.0.war`
-成功
-#### 4.1 Creating Asynchronous Methods
-使用异步方法访问GitHub的Api得到数据
-#### 4.2 Handling Form Submission
-#### 4.3 Using WebSocket to build an interactive web application
-通过EnableWebSocketMessageBroker发送name到server,一秒后返回hello name!
-前端逻辑在app.js里
-#### 4.4 Consuming a RESTful Web Service with jQuery
-使用public目录里hello.js
-#### 4.4 Enabling Cross Origin Requests for a RESTful Web Service
-跨域测试:设置跨域@CrossOrigin后,通过mvn spring-boot:run和mvn spring-boot:run -Dserver.port=9000
-启动两个应用,8080端口无法通过首页访问GreetingController,成功
