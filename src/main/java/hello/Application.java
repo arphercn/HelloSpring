@@ -1,94 +1,55 @@
 package hello;
 
-import java.io.IOException;
-import java.util.Properties;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.data.gemfire.CacheFactoryBean;
-import org.springframework.data.gemfire.LocalRegionFactoryBean;
-import org.springframework.data.gemfire.repository.config.EnableGemfireRepositories;
 
-import com.gemstone.gemfire.cache.GemFireCache;
+@SpringBootApplication
+public class Application {
 
-@Configuration
-@EnableGemfireRepositories
-@SuppressWarnings("unused")
-public class Application implements CommandLineRunner {
+    private static final Logger log = LoggerFactory.getLogger(Application.class);
 
-    @Bean
-    Properties gemfireProperties() {
-        Properties gemfireProperties = new Properties();
-        gemfireProperties.setProperty("name", "DataGemFireApplication");
-        gemfireProperties.setProperty("mcast-port", "0");
-        gemfireProperties.setProperty("log-level", "config");
-        return gemfireProperties;
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class);
     }
 
     @Bean
-    CacheFactoryBean gemfireCache() {
-        CacheFactoryBean gemfireCache = new CacheFactoryBean();
-        gemfireCache.setClose(true);
-        gemfireCache.setProperties(gemfireProperties());
-        return gemfireCache;
-    }
+    public CommandLineRunner demo(CustomerRepository repository) {
+        return (args) -> {
+            // save a couple of customers
+            repository.save(new Customer("Jack", "Bauer"));
+            repository.save(new Customer("Chloe", "O'Brian"));
+            repository.save(new Customer("Kim", "Bauer"));
+            repository.save(new Customer("David", "Palmer"));
+            repository.save(new Customer("Michelle", "Dessler"));
 
-    @Bean
-    LocalRegionFactoryBean<String, Person> helloRegion(final GemFireCache cache) {
-        LocalRegionFactoryBean<String, Person> helloRegion = new LocalRegionFactoryBean<>();
-        helloRegion.setCache(cache);
-        helloRegion.setClose(false);
-        helloRegion.setName("hello");
-        helloRegion.setPersistent(false);
-        return helloRegion;
-    }
+            // fetch all customers
+            log.info("Customers found with findAll():");
+            log.info("-------------------------------");
+            for (Customer customer : repository.findAll()) {
+                log.info(customer.toString());
+            }
+            log.info("");
 
-    @Autowired
-    PersonRepository personRepository;
+            // fetch an individual customer by ID
+            Customer customer = repository.findOne(1L);
+            log.info("Customer found with findOne(1L):");
+            log.info("--------------------------------");
+            log.info(customer.toString());
+            log.info("");
 
-    @Override
-    public void run(String... strings) throws Exception {
-        Person alice = new Person("Alice", 40);
-        Person bob = new Person("Baby Bob", 1);
-        Person carol = new Person("Teen Carol", 13);
-
-        System.out.println("Before linking up with Gemfire...");
-        for (Person person : new Person[] { alice, bob, carol }) {
-            System.out.println("\t" + person);
-        }
-
-        personRepository.save(alice);
-        personRepository.save(bob);
-        personRepository.save(carol);
-
-        System.out.println("Lookup each person by name...");
-        for (String name : new String[] { alice.name, bob.name, carol.name }) {
-            System.out.println("\t" + personRepository.findByName(name));
-        }
-
-        System.out.println("Adults (over 18):");
-        for (Person person : personRepository.findByAgeGreaterThan(18)) {
-            System.out.println("\t" + person);
-        }
-
-        System.out.println("Babies (less than 5):");
-        for (Person person : personRepository.findByAgeLessThan(5)) {
-            System.out.println("\t" + person);
-        }
-
-        System.out.println("Teens (between 12 and 20):");
-        for (Person person : personRepository.findByAgeGreaterThanAndAgeLessThan(12, 20)) {
-            System.out.println("\t" + person);
-        }
-    }
-
-    public static void main(String[] args) throws IOException {
-        SpringApplication application = new SpringApplication(Application.class);
-        application.setWebEnvironment(false);
-        application.run(args);
+            // fetch customers by last name
+            log.info("Customer found with findByLastName('Bauer'):");
+            log.info("--------------------------------------------");
+            for (Customer bauer : repository.findByLastName("Bauer")) {
+                log.info(bauer.toString());
+            }
+            log.info("");
+        };
     }
 
 }

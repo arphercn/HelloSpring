@@ -35,3 +35,8 @@ Java Message Service, 处理Email
 返回的资源包含可以变化参数的链接url,用来指向本条目,(格式可以是json,xml等格式)
 #### 3.7 Accessing Data with GemFire
 增强版的Redis
+#### 3.8 Accessing Data with JPA
+JPA全称为Java Persistence API,Java持久化接口
+[JPA入门例子](http://blog.csdn.net/hmk2011/article/details/6289151)  
+使用JPA持久化对象，并不是依赖于某一个ORM框架  
+本例使用javax.persistence.Entity注释customer模型
