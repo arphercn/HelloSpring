@@ -46,3 +46,5 @@ JPA全称为Java Persistence API,Java持久化接口
  在内嵌容器依赖spring-boot-starter-tomcat下添加`<scope>provided</scope>`(本例无)
  然后执行`mvn clean package && java -jar target/gs-accessing-data-jpa-0.1.0.war`
 成功
+#### 4.1 Creating Asynchronous Methods
+使用异步方法访问GitHub的Api得到数据
