@@ -1,23 +1,18 @@
 package hello;
 
+import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class GreetingController {
 
-    @GetMapping("/greeting")
-    public String greetingForm(Model model) {
-        model.addAttribute("greeting", new Greeting());
-        return "greeting";
-    }
 
-    @PostMapping("/greeting")
-    public String greetingSubmit(@ModelAttribute Greeting greeting) {
-        return "result";
+    @MessageMapping("/hello")
+    @SendTo("/topic/greetings")
+    public Greeting greeting(HelloMessage message) throws Exception {
+        Thread.sleep(1000); // simulated delay
+        return new Greeting("Hello, " + message.getName() + "!");
     }
 
 }

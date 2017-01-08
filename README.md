@@ -49,3 +49,7 @@ JPA全称为Java Persistence API,Java持久化接口
 #### 4.1 Creating Asynchronous Methods
 使用异步方法访问GitHub的Api得到数据
 #### 4.2 Handling Form Submission
+#### 4.3 Using WebSocket to build an interactive web application
+通过EnableWebSocketMessageBroker发送name到server,一秒后返回hello name!
+前端逻辑在app.js里
+
