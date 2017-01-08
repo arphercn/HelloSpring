@@ -52,4 +52,8 @@ JPA全称为Java Persistence API,Java持久化接口
 #### 4.3 Using WebSocket to build an interactive web application
 通过EnableWebSocketMessageBroker发送name到server,一秒后返回hello name!
 前端逻辑在app.js里
-
+#### 4.4 Consuming a RESTful Web Service with jQuery
+使用public目录里hello.js
+#### 4.4 Enabling Cross Origin Requests for a RESTful Web Service
+跨域测试:设置跨域@CrossOrigin后,通过mvn spring-boot:run和mvn spring-boot:run -Dserver.port=9000
+启动两个应用,8080端口无法通过首页访问GreetingController,成功
