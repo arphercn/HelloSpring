@@ -31,3 +31,5 @@ Java Message Service, 处理Email
 使用spring-batch-core依赖,顺序执行操作,从csv文档读取数据,转化处理,存储
 #### 3.5 Securing a Web Application
 实现用户登录推出
+#### 3.6 Building a Hypermedia-Driven RESTful Web Service
+返回的资源包含可以变化参数的链接url,用来指向本条目,(格式可以是json,xml等格式)
