@@ -40,3 +40,9 @@ JPA全称为Java Persistence API,Java持久化接口
 [JPA入门例子](http://blog.csdn.net/hmk2011/article/details/6289151)  
 使用JPA持久化对象，并不是依赖于某一个ORM框架  
 本例使用javax.persistence.Entity注释customer模型
+#### 3.9 Converting a Spring Boot JAR Application to a WAR
+使用jar时,`mvn clean package && java -jar target/gs-accessing-data-jpa-0.1.0.jar`
+使用war包,在pom.xml添加`<packaging>war</packaging>`,
+ 在内嵌容器依赖spring-boot-starter-tomcat下添加`<scope>provided</scope>`(本例无)
+ 然后执行`mvn clean package && java -jar target/gs-accessing-data-jpa-0.1.0.war`
+成功
