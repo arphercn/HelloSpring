@@ -33,3 +33,5 @@ Java Message Service, 处理Email
 实现用户登录推出
 #### 3.6 Building a Hypermedia-Driven RESTful Web Service
 返回的资源包含可以变化参数的链接url,用来指向本条目,(格式可以是json,xml等格式)
+#### 3.7 Accessing Data with GemFire
+增强版的Redis
