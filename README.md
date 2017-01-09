@@ -61,3 +61,5 @@ JPA全称为Java Persistence API,Java持久化接口
 #### 5.1 Producing a SOAP web service
 [三种主流的Web服务实现方案（REST+SOAP+XML-RPC）简述及比较](http://www.cnblogs.com/lanxuezaipiao/archive/2013/05/11/3072436.html)
 [WebService的两种方式Soap和Rest比较](http://www.cnblogs.com/yourshj/p/5968871.html)
+#### 5.2 Testing the Web Layer
+
