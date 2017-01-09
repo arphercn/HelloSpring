@@ -50,6 +50,7 @@ JPA全称为Java Persistence API,Java持久化接口
 使用异步方法访问GitHub的Api得到数据
 #### 4.2 Handling Form Submission
 #### 4.3 Using WebSocket to build an interactive web application
+<https://www.zhihu.com/question/20215561>
 通过EnableWebSocketMessageBroker发送name到server,一秒后返回hello name!
 前端逻辑在app.js里
 #### 4.4 Consuming a RESTful Web Service with jQuery
@@ -57,3 +58,6 @@ JPA全称为Java Persistence API,Java持久化接口
 #### 4.4 Enabling Cross Origin Requests for a RESTful Web Service
 跨域测试:设置跨域@CrossOrigin后,通过mvn spring-boot:run和mvn spring-boot:run -Dserver.port=9000
 启动两个应用,8080端口无法通过首页访问GreetingController,成功
+#### 5.1 Producing a SOAP web service
+[三种主流的Web服务实现方案（REST+SOAP+XML-RPC）简述及比较](http://www.cnblogs.com/lanxuezaipiao/archive/2013/05/11/3072436.html)
+[WebService的两种方式Soap和Rest比较](http://www.cnblogs.com/yourshj/p/5968871.html)
