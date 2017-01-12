@@ -63,5 +63,7 @@ JPA全称为Java Persistence API,Java持久化接口
 [WebService的两种方式Soap和Rest比较](http://www.cnblogs.com/yourshj/p/5968871.html)
 #### 5.2 Testing the Web Layer
 #### 5.3 Routing and Filtering
-使用代理转路由,依赖目前不报错,参考文档,测试不成功
+使用代理转路由,依赖目前不报错,参考文档,待测试
+#### 5.3 Centralized Configuration
+待测试
 

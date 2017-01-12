@@ -24,6 +24,8 @@
       <sourceFolder url="file://$MODULE_DIR$/book/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/book/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/gateway/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/configuration-service/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/configuration-client/src/main/java" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target/classes" />
       <excludeFolder url="file://$MODULE_DIR$/target/gs-accessing-data-jpa-0.1.0" />
       <excludeFolder url="file://$MODULE_DIR$/target/jaxb2" />
